@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
 import { SIDEBAR_NAV_GROUPS } from "@/constants/sidebar-links";
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
-import { toggleSidebarCollapsed } from "@/app/store/slices/ui-slice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { toggleSidebarCollapsed } from "@/store/slices/ui-slice";
 import { cn } from "@/lib/utils";
 
 export const Sidebar = () => {

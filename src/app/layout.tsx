@@ -38,8 +38,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
         <StoreProvider>
           <ThemeProvider>
-            <AppShell>{children}</AppShell>
-            <Toaster richColors position="top-center" />
+            {children}
+            <Toaster richColors position="top-right" />
           </ThemeProvider>
         </StoreProvider>
       </body>

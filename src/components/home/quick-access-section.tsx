@@ -26,7 +26,7 @@ export const QuickAccessSection = ({ items, isLoading = false }: QuickAccessSect
       ) : items.length === 0 ? (
         <EmptyState title="No quick access items" description="Check back later." />
       ) : (
-        <div className="flex gap-4 overflow-x-auto pb-1 [scrollbar-width:none] md:grid md:grid-cols-5 md:overflow-visible">
+        <div className="flex gap-4 overflow-x-auto pb-1 scrollbar-none md:grid md:grid-cols-5 md:overflow-visible">
           {items.map((item) => (
             <QuickAccessItem key={item.id} item={item} />
           ))}

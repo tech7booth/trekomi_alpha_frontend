@@ -21,7 +21,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     description: "English Speaking | Public Speaking | Banking | Other Subjects",
     ctaLabel: "Start Learning",
     ctaHref: "/courses",
-    imageUrl: "/images/hero/students-1.png",
+    imageUrl: "/banners/spoken-english.png",
   },
   {
     id: "slide-2",
@@ -30,7 +30,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     description: "IBPS, SBI, RBI and other banking exams with expert mentors",
     ctaLabel: "Explore Courses",
     ctaHref: "/categories/competitive-exams",
-    imageUrl: "/images/hero/students-2.png",
+    imageUrl: "/banners/spoken-english.png",
   },
 ];
 
@@ -57,15 +57,15 @@ export const CONTINUE_LEARNING_COURSES: ContinueLearningCourse[] = [
     title: "English Speaking Beginner to Advanced",
     categoryLabel: "English Speaking",
     progressPercent: 60,
-    thumbnailUrl: "/images/courses/english-speaking.png",
-    href: "/my-courses/course-1/learn",
+    thumbnailUrl: "/banners/spoken-english.png",
+    href: "/banners/spoken-english.png",
   },
   {
     id: "course-2",
     title: "Banking Preparation (IBPS, SBI, RBI)",
     categoryLabel: "Banking",
     progressPercent: 45,
-    thumbnailUrl: "/images/courses/banking-prep.png",
-    href: "/my-courses/course-2/learn",
+    thumbnailUrl: "/banners/spoken-english.png",
+    href: "/banners/spoken-english.png",
   },
 ];

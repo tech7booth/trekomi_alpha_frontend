@@ -43,11 +43,19 @@ export const HeroBanner = ({ slides, isLoading = false }: HeroBannerProps) => {
   const activeSlide = slides[activeIndex];
 
   return (
+    // components/home/hero-banner.tsx
     <div
-      className="relative h-64 w-full overflow-hidden rounded-xl bg-primary md:h-80"
+      className="relative h-64 w-full overflow-hidden rounded-xl md:h-80"
+      style={{
+        background: "linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-via) 55%, var(--gradient-to) 100%)",
+      }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
+<div
+  className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-secondary/20 blur-3xl"
+  aria-hidden="true"
+/>
       <AnimatePresence mode="wait">
         <motion.div
           key={activeSlide.id}

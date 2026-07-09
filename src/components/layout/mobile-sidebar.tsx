@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { SIDEBAR_NAV_GROUPS } from "@/constants/sidebar-links";
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
-import { setMobileSidebarOpen } from "@/app/store/slices/ui-slice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { setMobileSidebarOpen } from "@/store/slices/ui-slice";
 import { cn } from "@/lib/utils";
 
 /**

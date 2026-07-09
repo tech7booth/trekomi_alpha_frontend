@@ -5,8 +5,8 @@ import { Sidebar } from "./sidebar";
 import { Footer } from "./footer";
 import { BottomNavigation } from "./bottom-navigation";
 import { MobileSidebar } from "./mobile-sidebar";
-import { useAppDispatch } from "@/app/store/hooks";
-import { toggleMobileSidebar } from "@/app/store/slices/ui-slice";
+import { useAppDispatch } from "@/store/hooks";
+import { toggleMobileSidebar } from "@/store/slices/ui-slice";
 
 interface AppShellProps {
   children: React.ReactNode;
