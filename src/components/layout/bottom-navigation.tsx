@@ -20,7 +20,7 @@ export const BottomNavigation = () => {
     >
       <ul className="grid grid-cols-5">
         {PRIMARY_NAV_LINKS.map(({ label, href, icon: Icon }) => {
-          const isActive = href === "/home" ? pathname === "/home" : pathname.startsWith(href);
+          const isActive = href === "/dashboard" ? pathname === "/dashboard" : pathname.startsWith(href);
 
           return (
             <li key={href}>

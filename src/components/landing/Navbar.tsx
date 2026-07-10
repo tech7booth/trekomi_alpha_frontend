@@ -69,11 +69,11 @@ export const Navbar = ()  => {
         <div className="flex items-center gap-2">
           <ThemeToggle />
 
-          <div className="hidden items-center gap-2 sm:flex">
+          <div className="items-center gap-2 flex">
             <Button asChild variant="ghost" className="rounded-xl">
               <Link href="/login">Log in</Link>
             </Button>
-            <Button asChild className="rounded-xl bg-primary hover:bg-primary/90">
+            <Button asChild className="rounded-xl hidden sm:block bg-primary hover:bg-primary/90">
               <Link href="/register">Sign up free</Link>
             </Button>
           </div>

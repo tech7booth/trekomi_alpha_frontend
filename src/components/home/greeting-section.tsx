@@ -25,7 +25,6 @@ export function GreetingSection({
             : hour < 17
                 ? "Good Afternoon"
                 : "Good Evening";
-
     return (
         <section className="space-y-5">
             <div>
@@ -41,7 +40,7 @@ export function GreetingSection({
                     Keep learning consistently. Every lesson gets you closer to your goal.
                 </p>
             </div>
-
+            
             <div className="grid grid-cols-2 gap-3">
                 <StatCard
                     icon={<Flame className="size-5 text-orange-500" />}

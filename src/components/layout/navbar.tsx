@@ -20,7 +20,7 @@ export const Navbar = ({ onMenuClick, notificationCount = 0 }: NavbarProps) => {
     <header
       className={cn(
         "sticky top-0 z-40 w-full border-b border-border",
-        "bg-card/90 backdrop-blur-md supports-[backdrop-filter]:bg-card/70"
+        "bg-card/90 backdrop-blur-md supports-backdrop-filter:bg-card/70"
       )}
     >
       <div className="mx-auto flex h-16 items-center justify-between gap-4 px-4 md:px-6">

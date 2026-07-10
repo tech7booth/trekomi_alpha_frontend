@@ -34,7 +34,7 @@ export const SIDEBAR_NAV_GROUPS: SidebarGroup[] = [
   {
     title: "Learn",
     links: [
-      { label: "Home", href: "/", icon: Home },
+      { label: "Home", href: "/dashboard", icon: Home },
       { label: "Live Classes", href: "/live-classes", icon: Video },
       { label: "My Courses", href: "/my-courses", icon: BookOpen },
       { label: "Test Series", href: "/test-series", icon: ClipboardList },

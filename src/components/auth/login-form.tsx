@@ -47,7 +47,7 @@ export const LoginForm = () => {
       }
 
       toast.success(response.message || "Welcome back!");
-      // router.push("/");
+      router.push("/dashboard");
     } catch (err) {
       const apiError = err as ApiErrorData;
       toast.error(apiError.message || "Invalid email or password.");

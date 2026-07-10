@@ -75,7 +75,7 @@ export const RegisterForm = () => {
         const storage = localStorage ;
         storage.setItem("trekomi-access-token", response.data?.accessToken);
       }
-      router.push("/login");
+      router.push("/dashboard");
     } catch (err) {
       const apiError = err as ApiErrorData;
       toast.error(apiError.message || "Registration failed. Please try again.");
