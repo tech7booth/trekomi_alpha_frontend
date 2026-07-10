@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, Bell, Search } from "lucide-react";
+import { Menu, Bell, Search, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "../shared/theme-toggle";
@@ -23,7 +23,7 @@ export const Navbar = ({ onMenuClick, notificationCount = 0 }: NavbarProps) => {
         "bg-card/90 backdrop-blur-md supports-[backdrop-filter]:bg-card/70"
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
+      <div className="mx-auto flex h-16 items-center justify-between gap-4 px-4 md:px-6">
         <div className="flex items-center gap-3">
           <Button
             variant="ghost"
@@ -36,7 +36,11 @@ export const Navbar = ({ onMenuClick, notificationCount = 0 }: NavbarProps) => {
           </Button>
 
           <Link href="/" className="flex items-center gap-2" aria-label="Trekomi Alpha home">
-            <Image src="/logo.png" alt="Trekomi Alpha logo" width={36} height={36} className="rounded-full" priority />
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+            <GraduationCap className="h-5 w-5" aria-hidden="true" />
+          </span>
+      
+            {/* <Image src="/logo.png" alt="Trekomi Alpha logo" width={36} height={36} className="rounded-full" priority /> */}
             <span className="hidden text-title font-bold tracking-tight text-foreground sm:block">
               TREKOMI <span className="text-primary">ALPHA</span>
             </span>
@@ -87,6 +91,8 @@ export const Navbar = ({ onMenuClick, notificationCount = 0 }: NavbarProps) => {
               </span>
             )}
           </Link>
+
+          <DeskProfileMenu/>
         </div>
       </div>
 
@@ -107,3 +113,80 @@ export const Navbar = ({ onMenuClick, notificationCount = 0 }: NavbarProps) => {
     </header>
   );
 };
+
+import {
+  LogOut,
+  Settings,
+  User,
+  BookOpen,
+  ChevronDown,
+} from "lucide-react";
+
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+export function DeskProfileMenu() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button className="hidden md:block rounded-full outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <Avatar className="size-9 cursor-pointer">
+            <AvatarImage src="/images/avatar.png" />
+            <AvatarFallback>KS</AvatarFallback>
+          </Avatar>
+        </button>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent
+        align="end"
+        className="w-60"
+        sideOffset={8}
+      >
+        <DropdownMenuLabel>
+          <div className="flex flex-col">
+            <span className="font-medium">Kunal Shroff</span>
+            <span className="text-xs text-muted-foreground">
+              kunal@example.com
+            </span>
+          </div>
+        </DropdownMenuLabel>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuItem>
+          <User className="mr-2 size-4" />
+          Profile
+        </DropdownMenuItem>
+
+        <DropdownMenuItem>
+          <BookOpen className="mr-2 size-4" />
+          My Courses
+        </DropdownMenuItem>
+
+        <DropdownMenuItem>
+          <Settings className="mr-2 size-4" />
+          Settings
+        </DropdownMenuItem>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuItem className="text-destructive focus:text-destructive">
+          <LogOut className="mr-2 size-4" />
+          Logout
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}

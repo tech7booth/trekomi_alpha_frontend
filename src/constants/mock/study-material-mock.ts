@@ -1,0 +1,58 @@
+import type { StudyMaterial } from "@/types/study-material.types";
+
+export const STUDY_MATERIALS: StudyMaterial[] = [
+  {
+    id: "sm-1",
+    title: "English Grammar Complete Notes",
+    categoryLabel: "English Speaking",
+    fileType: "pdf",
+    fileSizeLabel: "2.4 MB",
+    uploadedAt: "2026-06-12",
+    downloadUrl: "/files/english-grammar-notes.pdf",
+  },
+  {
+    id: "sm-2",
+    title: "Banking Awareness Handbook 2026",
+    categoryLabel: "Banking",
+    fileType: "pdf",
+    fileSizeLabel: "5.1 MB",
+    uploadedAt: "2026-06-20",
+    downloadUrl: "/files/banking-awareness-handbook.pdf",
+  },
+  {
+    id: "sm-3",
+    title: "Public Speaking Presentation Templates",
+    categoryLabel: "Public Speaking",
+    fileType: "ppt",
+    fileSizeLabel: "8.7 MB",
+    uploadedAt: "2026-05-30",
+    downloadUrl: "/files/public-speaking-templates.ppt",
+  },
+  {
+    id: "sm-4",
+    title: "Quantitative Aptitude Formula Sheet",
+    categoryLabel: "Competitive Exams",
+    fileType: "doc",
+    fileSizeLabel: "1.2 MB",
+    uploadedAt: "2026-06-28",
+    downloadUrl: "/files/quant-formula-sheet.doc",
+  },
+  {
+    id: "sm-5",
+    title: "Reasoning Ability Practice Set",
+    categoryLabel: "Competitive Exams",
+    fileType: "pdf",
+    fileSizeLabel: "3.8 MB",
+    uploadedAt: "2026-07-01",
+    downloadUrl: "/files/reasoning-practice-set.pdf",
+  },
+  {
+    id: "sm-6",
+    title: "Class 10 Science Foundation Notes",
+    categoryLabel: "School (Academic)",
+    fileType: "pdf",
+    fileSizeLabel: "4.5 MB",
+    uploadedAt: "2026-06-05",
+    downloadUrl: "/files/class10-science-notes.pdf",
+  },
+];

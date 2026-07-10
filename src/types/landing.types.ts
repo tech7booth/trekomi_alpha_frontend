@@ -36,6 +36,7 @@ export interface CategoryItem {
   courseCount: number;
   icon: IconName;
   href: string;
+  slug?:string,
   accent: "primary" | "secondary";
 }
 

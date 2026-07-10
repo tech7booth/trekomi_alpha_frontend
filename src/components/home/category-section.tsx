@@ -23,7 +23,7 @@ export const CategorySection = ({ categories, isLoading = false }: CategorySecti
       ) : categories.length === 0 ? (
         <EmptyState title="No categories available" description="Please check back soon." />
       ) : (
-        <div className="grid grid-cols-3 gap-3 md:grid-cols-5">
+        <div className="grid grid-cols-3 gap-2 md:grid-cols-5">
           {categories.map((category) => (
             <CategoryCard key={category.id} category={category} variant="tile" />
           ))}

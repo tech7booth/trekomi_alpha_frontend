@@ -20,7 +20,7 @@ export const BottomNavigation = () => {
     >
       <ul className="grid grid-cols-5">
         {PRIMARY_NAV_LINKS.map(({ label, href, icon: Icon }) => {
-          const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
+          const isActive = href === "/home" ? pathname === "/home" : pathname.startsWith(href);
 
           return (
             <li key={href}>
@@ -35,7 +35,7 @@ export const BottomNavigation = () => {
                 )}
               >
                 <Icon className={cn("size-5", isActive && "fill-primary/10")} strokeWidth={isActive ? 2.5 : 2} />
-                <span className={cn(isActive && "font-medium")}>{label}</span>
+                <span className={`text-sm font-medium text-center ${cn(isActive && " font-semibold")}`}>{label}</span>
 
                 {isActive && (
                   <motion.span

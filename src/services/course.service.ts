@@ -4,7 +4,7 @@ import type { Course, CourseFilters, PaginatedCourses } from "@/types/course.typ
 import { COURSES_PER_PAGE } from "@/types/course.types";
 
 const CATEGORY_SLUG_TO_TITLE: Record<string, string> = Object.fromEntries(
-  CATEGORY_ITEMS.map((category) => [category.slug, category.title]),
+  CATEGORY_ITEMS.map((category) => [category.title.split("=")[1], category.title]),
 );
 
 const priceMatchesBucket = (price: number, bucket: string): boolean => {
@@ -86,3 +86,35 @@ export const getRecommendedCourses = async (excludeIds: string[] = []): Promise<
     .sort((a, b) => b.rating - a.rating || b.studentCount - a.studentCount)
     .slice(0, 4);
 };
+
+
+import { api } from "@/store/services/api";
+import type { ApiEnvelope } from "@/types/api.types";
+import type { MyCourse } from "@/types/course.types";
+import type { Category } from "@/types/category.types";
+import type { StudyMaterial } from "@/types/study-material.types";
+
+export const courseApi = api.injectEndpoints({
+  endpoints: (builder) => ({
+    getMyCourses: builder.query<MyCourse[], void>({
+      query: () => ({ url: "/courses/my-courses", method: "GET" }),
+      transformResponse: (response: ApiEnvelope<MyCourse[]>) => response.data,
+      providesTags: ["Course"],
+    }),
+
+    getCategories: builder.query<Category[], void>({
+      query: () => ({ url: "/categories", method: "GET" }),
+      transformResponse: (response: ApiEnvelope<Category[]>) => response.data,
+      providesTags: ["Category"],
+    }),
+
+    getStudyMaterials: builder.query<StudyMaterial[], { categoryLabel?: string } | void>({
+      query: (params) => ({ url: "/study-materials", method: "GET", params: params ?? undefined }),
+      transformResponse: (response: ApiEnvelope<StudyMaterial[]>) => response.data,
+      providesTags: ["Course"],
+    }),
+  }),
+  overrideExisting: false,
+});
+
+export const { useGetMyCoursesQuery, useGetCategoriesQuery, useGetStudyMaterialsQuery } = courseApi;

@@ -3,13 +3,13 @@
 import { useCourseFilters } from "@/hooks/useCourseFilters";
 import { useGetCoursesQuery } from "@/features/courses/coursesApi";
 import { CourseSearchBar } from "@/components/course/CourseSearchBar";
-import { CourseSortSelect } from "@/components/course/CourseSortSelect";
-import { CourseFilterSidebar } from "@/components/course/CourseFilterSidebar";
+// import { CourseSortSelect } from "@/components/course/CourseSortSelect";
+// import { CourseFilterSidebar } from "@/components/course/CourseFilterSidebar";
 import { CourseFilterDrawer } from "@/components/course/CourseFilterDrawer";
 import { ActiveFiltersBar } from "@/components/course/ActiveFiltersBar";
 import { CourseGrid } from "@/components/course/CourseGrid";
 import { CoursePaginationControls } from "@/components/course/CoursePaginationControls";
-import { RecommendedCoursesSection } from "@/components/course/RecommendedCoursesSection";
+// import { RecommendedCoursesSection } from "@/components/course/RecommendedCoursesSection";
 
 export const CourseCatalogClient = ()  => {
   const { filters, setFilters, resetFilters } = useCourseFilters();
@@ -22,7 +22,33 @@ export const CourseCatalogClient = ()  => {
     (filters.minRating ? 1 : 0);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 pt-2 pb-10 sm:px-6 lg:px-8">
+
+      
+      <div className="mb-6 flex gap-3 flex-row items-center">
+        <CourseSearchBar
+          defaultValue={filters.search}
+          onSearch={(value) => setFilters({ search: value })}
+        />
+
+        <div className="flex gap-3">
+          <CourseFilterDrawer
+            filters={filters}
+            onChange={(patch) => setFilters(patch)}
+            onClear={resetFilters}
+            activeFilterCount={activeFilterCount}
+          />
+          {/* <CourseSortSelect value={filters.sort} onChange={(sort) => setFilters({ sort }, { resetPage: false })} /> */}
+        </div>
+
+      </div>
+      {activeFilterCount > 0 && (
+        <div className="mb-6">
+          <ActiveFiltersBar filters={filters} onChange={(patch) => setFilters(patch)} />
+        </div>
+      )}
+
+
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-[32px]">
           Explore courses
@@ -33,37 +59,16 @@ export const CourseCatalogClient = ()  => {
         </p>
       </div>
 
-      <RecommendedCoursesSection />
+      {/* <RecommendedCoursesSection /> */}
 
-      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <CourseSearchBar
-          defaultValue={filters.search}
-          onSearch={(value) => setFilters({ search: value })}
-        />
-        <div className="flex gap-3">
-          <CourseFilterDrawer
-            filters={filters}
-            onChange={(patch) => setFilters(patch)}
-            onClear={resetFilters}
-            activeFilterCount={activeFilterCount}
-          />
-          <CourseSortSelect value={filters.sort} onChange={(sort) => setFilters({ sort }, { resetPage: false })} />
-        </div>
-      </div>
-
-      {activeFilterCount > 0 && (
-        <div className="mb-6">
-          <ActiveFiltersBar filters={filters} onChange={(patch) => setFilters(patch)} />
-        </div>
-      )}
 
       <div className="flex gap-8">
-        <CourseFilterSidebar
+        {/* <CourseFilterSidebar
           filters={filters}
           onChange={(patch) => setFilters(patch)}
           onClear={resetFilters}
           activeFilterCount={activeFilterCount}
-        />
+        /> */}
 
         <div className="min-w-0 flex-1">
           <CourseGrid

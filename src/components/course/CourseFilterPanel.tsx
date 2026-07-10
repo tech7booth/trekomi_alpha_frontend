@@ -51,9 +51,9 @@ export const CourseFilterPanel = ({
           <div key={category.slug} className="flex items-center gap-2.5">
             <Checkbox
               id={`category-${category.slug}`}
-              checked={filters.categories.includes(category.slug)}
+              checked={filters.categories.includes(category.slug!)}
               onCheckedChange={() =>
-                onChange({ categories: toggleValue(filters.categories, category.slug) })
+                onChange({ categories: toggleValue(filters.categories, category.slug!) })
               }
             />
             <Label

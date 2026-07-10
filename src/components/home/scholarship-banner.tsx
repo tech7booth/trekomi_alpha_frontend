@@ -19,7 +19,7 @@ export const ScholarshipBanner = ({
   ctaHref = "/scholarship",
 }: ScholarshipBannerProps) => {
   return (
-    <div className="relative overflow-hidden rounded-xl bg-primary px-6 py-8 md:px-10">
+    <div className="relative overflow-hidden rounded-xl bg-primary p-4 sm:px-6 md:py-8 md:px-10">
       <div className="absolute right-0 top-0 h-full w-1/3 opacity-90">
         <Image
           src="/images/home/scholarship-trophy.png"
@@ -36,19 +36,19 @@ export const ScholarshipBanner = ({
           Scholarship
         </span>
 
-        <h3 className="mt-3 text-subheading font-bold text-primary-foreground">{title}</h3>
+        <h3 className="mt-3 text-2xl md:text-subheading font-bold text-primary-foreground">{title}</h3>
 
-        <p className="mt-2 text-heading font-extrabold text-secondary">
+        <p className="mt-2 text-lg md:text-heading font-extrabold text-secondary">
           {minAmount} - {maxAmount}
         </p>
 
-        <p className="mt-1 text-body text-primary-foreground/80">Jeetne ka mauka!</p>
+        <p className="mt-1 text-small md:text-body text-primary-foreground/80">Jeetne ka mauka!</p>
 
         <Link
           href={ctaHref}
           className={cn(
             "mt-5 inline-flex items-center gap-2 rounded-xl bg-secondary px-5 py-2.5",
-            "text-body font-semibold text-secondary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]",
+            " text-caption md:text-body font-semibold text-secondary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground"
           )}
         >

@@ -16,12 +16,12 @@ export const HERO_STATS: StatItem[] = [
 ];
 
 export const CATEGORY_ITEMS: CategoryItem[] = [
-  { id: "cat-1", title: "JEE & NEET", courseCount: 240, icon: "Sparkles", href: "/courses?cat=jee-neet", accent: "primary" },
-  { id: "cat-2", title: "Class 6–10 Foundation", courseCount: 180, icon: "BookOpen", href: "/courses?cat=foundation", accent: "secondary" },
-  { id: "cat-3", title: "UPSC & State PSC", courseCount: 96, icon: "Award", href: "/courses?cat=upsc", accent: "primary" },
-  { id: "cat-4", title: "Banking & SSC", courseCount: 140, icon: "TrendingUp", href: "/courses?cat=banking-ssc", accent: "secondary" },
-  { id: "cat-5", title: "Coding & Tech Skills", courseCount: 75, icon: "Video", href: "/courses?cat=tech-skills", accent: "primary" },
-  { id: "cat-6", title: "Design & Creativity", courseCount: 52, icon: "Sparkles", href: "/courses?cat=design", accent: "secondary" },
+  { id: "cat-1", title: "JEE & NEET", courseCount: 240, icon: "Sparkles", href: "/courses?cat=jee-neet", slug:"jee-neet", accent: "primary" },
+  { id: "cat-2", title: "Class 6–10 Foundation", courseCount: 180, icon: "BookOpen", href: "/courses?cat=foundation", slug:"foundation", accent: "secondary" },
+  { id: "cat-3", title: "UPSC & State PSC", courseCount: 96, icon: "Award", href: "/courses?cat=upsc", slug:"upsc", accent: "primary" },
+  { id: "cat-4", title: "Banking & SSC", courseCount: 140, icon: "TrendingUp", href: "/courses?cat=banking-ssc",slug:"banking-ssc", accent: "secondary" },
+  { id: "cat-5", title: "Coding & Tech Skills", courseCount: 75, icon: "Video", href: "/courses?cat=tech-skills",slug:"tech-skills", accent: "primary" },
+  { id: "cat-6", title: "Design & Creativity", courseCount: 52, icon: "Sparkles", href: "/courses?cat=design",slug:"design", accent: "secondary" },
 ];
 
 export const FEATURED_COURSES: CourseSummary[] = [

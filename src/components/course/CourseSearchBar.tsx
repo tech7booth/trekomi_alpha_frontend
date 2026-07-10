@@ -24,7 +24,7 @@ export const CourseSearchBar = ({
   placeholder = "Search courses, instructors, or topics",
 }: CourseSearchBarProps)  => {
   const [value, setValue] = useState(defaultValue);
-  const debouncedValue = useDebounce(value, 400);
+  const debouncedValue = useDebounce(value, 600);
   const isFirstRun = useRef(true);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export const CourseSearchBar = ({
         aria-hidden="true"
       />
       <Input
-        type="search"
+        type="text"
         value={value}
         onChange={(event) => setValue(event.target.value)}
         placeholder={placeholder}

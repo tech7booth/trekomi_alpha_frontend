@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
  * of no further changes. Used to avoid firing a search/filter request on
  * every keystroke.
  */
-export const useDebounce = <T,>(value: T, delayMs = 400): T => {
+export const useDebounce = <T,>(value: T, delayMs = 600): T => {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {

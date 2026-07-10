@@ -90,7 +90,7 @@ export const Navbar = ()  => {
                 <Menu className="h-5 w-5" aria-hidden="true" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="flex w-[300px] flex-col gap-6">
+            <SheetContent side="right" className="flex p-4 w-[300px] flex-col gap-6">
               <nav aria-label="Mobile primary" className="flex flex-col gap-1 pt-8">
                 {MAIN_NAV_LINKS.map((link) => (
                   <SheetClose asChild key={link.href}>

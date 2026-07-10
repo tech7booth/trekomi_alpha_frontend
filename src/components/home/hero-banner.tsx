@@ -45,17 +45,17 @@ export const HeroBanner = ({ slides, isLoading = false }: HeroBannerProps) => {
   return (
     // components/home/hero-banner.tsx
     <div
-      className="relative h-64 w-full overflow-hidden rounded-xl md:h-80"
+      className="relative max-sm:h-52 h-64 w-full overflow-hidden rounded-xl md:h-80"
       style={{
         background: "linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-via) 55%, var(--gradient-to) 100%)",
       }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-<div
-  className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-secondary/20 blur-3xl"
-  aria-hidden="true"
-/>
+      <div
+        className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-secondary/20 blur-3xl"
+        aria-hidden="true"
+      />
       <AnimatePresence mode="wait">
         <motion.div
           key={activeSlide.id}
@@ -65,20 +65,20 @@ export const HeroBanner = ({ slides, isLoading = false }: HeroBannerProps) => {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="absolute inset-0 flex items-center"
         >
-          <div className="relative z-10 flex w-full flex-col justify-center gap-3 px-6 md:w-3/5 md:px-10">
-            <h1 className="text-heading font-bold leading-tight text-primary-foreground">
+          <div className="relative z-10 flex w-full flex-col justify-center gap-1 sm:gap-3 px-6 md:w-3/5 md:px-10">
+            <h1 className="max-sm:text-2xl text-heading font-bold leading-tight text-primary-foreground">
               {activeSlide.title}
               <br />
               <span className="text-secondary">{activeSlide.highlight}</span>
             </h1>
-            <p className="max-w-sm text-body text-primary-foreground/80">
+            <p className="max-w-sm max-sm:text-[14px] text-body text-primary-foreground/80">
               {activeSlide.description}
             </p>
             <Link
               href={activeSlide.ctaHref}
               className={cn(
-                "mt-2 inline-flex w-fit items-center gap-2 rounded-xl bg-secondary px-5 py-2.5",
-                "text-body font-semibold text-secondary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]",
+                "mt-2 inline-flex w-fit items-center gap-2 rounded-xl bg-secondary px-5 py-1.5 sm:py-2.5",
+                "text-[14px] sm:text-body font-semibold text-secondary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]",
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground"
               )}
             >

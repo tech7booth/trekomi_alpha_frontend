@@ -70,11 +70,47 @@ export const LEVEL_OPTIONS: Course["level"][] = ["Beginner", "Intermediate", "Ad
 
 
 
+// export interface ContinueLearningCourse {
+//   id: string;
+//   title: string;
+//   categoryLabel: string;
+//   progressPercent: number;
+//   thumbnailUrl: string;
+//   href: string;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 export interface ContinueLearningCourse {
   id: string;
   title: string;
   categoryLabel: string;
   progressPercent: number;
   thumbnailUrl: string;
+  href: string;
+}
+
+export type CourseStatus = "in-progress" | "completed" | "not-started";
+
+export interface MyCourse {
+  id: string;
+  title: string;
+  categoryLabel: string;
+  instructorName: string;
+  thumbnailUrl: string;
+  progressPercent: number;
+  totalLessons: number;
+  completedLessons: number;
+  status: CourseStatus;
   href: string;
 }

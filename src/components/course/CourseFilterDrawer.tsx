@@ -27,9 +27,9 @@ export const CourseFilterDrawer = ({
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button type="button" variant="outline" className="h-11 rounded-xl lg:hidden">
+        <Button type="button" variant="outline" className="h-11 rounded-xl">
           <SlidersHorizontal className="mr-2 h-4 w-4" aria-hidden="true" />
-          Filters
+          <span className="max-md:hidden">Filters</span>
           {activeFilterCount > 0 && (
             <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
               {activeFilterCount}
@@ -37,8 +37,8 @@ export const CourseFilterDrawer = ({
           )}
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] overflow-y-auto">
-        <div className="pt-8">
+      <SheetContent side="right" className="w-75 overflow-y-auto">
+        <div className="px-4 pt-10 ">
           <CourseFilterPanel
             filters={filters}
             onChange={onChange}
@@ -47,7 +47,7 @@ export const CourseFilterDrawer = ({
           />
         </div>
         <SheetClose asChild>
-          <Button className="mt-6 w-full rounded-xl bg-primary hover:bg-primary/90">
+          <Button className="my-6 mx-4 rounded-xl bg-primary hover:bg-primary/90">
             Show results
           </Button>
         </SheetClose>

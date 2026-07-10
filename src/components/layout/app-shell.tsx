@@ -30,7 +30,7 @@ export const AppShell = ({ children }: AppShellProps) => {
         <Sidebar />
 
         <div className="flex min-w-0 flex-1 flex-col">
-          <main className="flex-1 pb-16 md:pb-0">{children}</main>
+          <main className="flex-1 pb-20 md:pb-0">{children}</main>
           <Footer />
         </div>
       </div>
