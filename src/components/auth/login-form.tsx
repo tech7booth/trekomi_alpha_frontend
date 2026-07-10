@@ -115,7 +115,7 @@ export const LoginForm = () => {
         </Label>
       </div>
 
-      <Button type="submit" disabled={isLoading} className="w-full">
+      <Button type="submit" disabled={isLoading} className="w-full h-10">
         {isLoading ? (
           <>
             <Loader2 className="size-4 animate-spin" />

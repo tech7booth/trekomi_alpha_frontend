@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { GraduationCap } from "lucide-react";
+import { Input } from "../ui/input";
 
 interface AuthLayoutProps {
   title: string;
@@ -20,8 +21,8 @@ export const AuthLayout = ({
   footerLinkHref,
 }: AuthLayoutProps) => {
   return (
-    <div className="flex min-h-svh items-center justify-center bg-background px-4 py-10">
-      <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
+    <div className="flex min-h-svh items-center justify-center bg-background px-2 py-10">
+      <div className="w-full max-w-md rounded-xl border border-border bg-card p-4 shadow-sm md:p-8">
         <Link href="/" className="mb-6 flex items-center justify-center gap-2">
           {/* <Image src="/logo.png" alt="Trekomi Alpha" width={40} height={40} className="rounded-full" /> */}
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
@@ -44,6 +45,7 @@ export const AuthLayout = ({
             {footerLinkLabel}
           </Link>
         </p>
+        
       </div>
     </div>
   );
